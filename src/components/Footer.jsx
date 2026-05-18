@@ -20,10 +20,11 @@ const Footer = () => {
                             />
                             <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">StudyNook</h1>
                         </div>
+                         <p className="text-slate-600">Quiet study rooms,booked by the hour.Built for student,<br />scholars and lifelong learners</p>
                         
                     </div>
 
-                    <div className="flex items-center gap-8 text-sm font-bold text-slate-600">
+                    <div className="flex items-center gap-8 text-sm text-slate-600">
 
                         <ul>
                             <li className="text-xl font-semibold">Useable Links</li>
@@ -32,7 +33,7 @@ const Footer = () => {
                             <li>About</li>
                         </ul>
                     </div>
-                    <div className="flex items-center gap-8 text-sm font-bold text-slate-600">
+                    <div className="flex items-center gap-8 text-sm text-slate-600">
 
                         <ul>
                             <li className="text-xl font-semibold">Contact</li>
@@ -41,7 +42,7 @@ const Footer = () => {
 
                         </ul>
                     </div>
-                    <div className="flex items-center gap-8 text-sm font-bold text-slate-600">
+                    <div className="flex items-center gap-8 text-sm  text-slate-600">
 
                         <ul>
                             <li className="text-xl font-semibold">Follow</li>
@@ -56,7 +57,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="border-t m-4">
-                <p className="text-sm text-slate-500 font-medium text-center">© 2026 StudyNook Inc. All rights reserved.</p>
+                <p className="text-sm text-slate-500  text-center">© 2026 StudyNook Inc. All rights reserved.</p>
             </div>
         </footer>
     );

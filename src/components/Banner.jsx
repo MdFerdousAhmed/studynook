@@ -41,15 +41,15 @@ export default function Banner() {
         </div>
         <div className="flex gap-6 justify-center items-center text-center">
           <div>
-            <h1 className="text-xl font-bold">120+</h1>
+            <h1 className="text-xl font-semibold">120+</h1>
             <p className="text-black/60">Rooms Listed</p>
           </div>
           <div>
-            <h1 className="text-xl font-bold">8k</h1>
+            <h1 className="text-xl font-semibold">8k</h1>
             <p className="text-black/60">Hours Booked</p>
           </div>
           <div>
-            <h1 className="flex text-xl font-bold justify-center items-center">4.9<span><IoIosStar /></span></h1>
+            <h1 className="flex text-xl font-semibold justify-center items-center">4.9<span><IoIosStar /></span></h1>
             <p className="text-black/60">Avg. Rating</p>
           </div>
         </div>
