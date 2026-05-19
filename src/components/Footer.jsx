@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { CiMail } from "react-icons/ci";
 import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
 import { MdMailOutline } from "react-icons/md";
@@ -10,18 +8,15 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="flex flex-col items-center md:items-start gap-2">
-                        <div className="flex items-center justify-center gap-2">
-                            <Image
-                                src="/book.jpg"
-                                width={30}
-                                height={30}
-                                alt="Picture of the author"
-                                className="rounded-lg"
-                            />
-                            <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">StudyNook</h1>
+                        <div className="flex items-center">
+
+                            <h2 className="font-extrabold text-2xl tracking-tight text-slate-900">
+                                studynook
+                            </h2>
+
                         </div>
-                         <p className="text-slate-600">Quiet study rooms,booked by the hour.Built for student,<br />scholars and lifelong learners</p>
-                        
+                        <p className="text-slate-600">Quiet study rooms,booked by the hour.Built for student,<br />scholars and lifelong learners</p>
+
                     </div>
 
                     <div className="flex items-center gap-8 text-sm text-slate-600">
