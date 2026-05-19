@@ -1,3 +1,5 @@
+import { BookOpen } from "lucide-react";
+import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
 import { MdMailOutline } from "react-icons/md";
@@ -8,7 +10,10 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="flex flex-col items-center md:items-start gap-2">
-                        <div className="flex items-center">
+                        <div className="flex items-center gap-2">
+                            <div className="p-2 bg-blue-600 rounded-xl group-hover:rotate-12 transition-transform">
+                                <BookOpen className="w-6 h-6 text-white" />
+                            </div>
 
                             <h2 className="font-extrabold text-2xl tracking-tight text-slate-900">
                                 studynook
@@ -23,8 +28,8 @@ const Footer = () => {
 
                         <ul>
                             <li className="text-xl font-semibold">Useable Links</li>
-                            <li>Home</li>
-                            <li>Rooms</li>
+                            <Link href={"/"}><li>Home</li></Link>
+                            <Link href={"/rooms"}><li>Rooms</li></Link>
                             <li>About</li>
                         </ul>
                     </div>
