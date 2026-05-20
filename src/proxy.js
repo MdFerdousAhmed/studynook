@@ -6,7 +6,7 @@ import { auth } from './lib/auth';
 export async function proxy(request) {
   const session = await auth.api.getSession({
     headers: await headers() // headers containing the user's session token
-}); 
+  }); 
   if(!session && !session?.user){
     console.log(request.url, "from proxy")
     return NextResponse.redirect(new URL('/', request.url))
@@ -17,5 +17,6 @@ export async function proxy(request) {
 // export default function proxy(request) { ... }
  
 export const config = {
-  matcher: '/rooms/:id',
+  matcher:[ '/rooms/:id', "/dashboard", "/add-room"],
+  
 }

@@ -1,26 +1,36 @@
+import { auth } from '@/lib/auth';
 import { Chip } from '@heroui/react';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import React from 'react';
 
-const fetchSingleRoom = async(id) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/rooms/${id}`)
+const fetchSingleRoom = async (id, token) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/rooms/${id}`,{
+    headers: {
+        authorization: `Bearer ${token}` || "",
+      },
+  });
   const data = res.json();
   return data || {};
 }
 
-const RoomDetails = async({params}) => {
-  const {id} = await params;
-  const room = await fetchSingleRoom(id);
+const RoomDetails = async ({ params }) => {
+  const { id } = await params;
+  const {token} = await auth.api.getToken({
+    headers: await headers() // headers containing the user's session token
+  });
+  console.log(token)
+  const room = await fetchSingleRoom(id, token);
   const { _id, name, image, description, rate, capacity, amenities } = room;
   console.log(room)
-  
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
         <div className="lg:col-span-2 space-y-8">
           <div className="relative group overflow-hidden rounded-[2.5rem] shadow-2xl aspect-video">
             <Image
-              src={image ||'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200'}
+              src={image || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200'}
               alt="Course Thumbnail"
               fill
               className="object-cover transform transition duration-700 group-hover:scale-105"
@@ -68,17 +78,17 @@ const RoomDetails = async({params}) => {
               </p>
               <div className="w-full h-px bg-slate-100"></div>
               <div className=" items-center gap-4 text-xs text-slate-500 font-bold">
-          <h3 className='font-semibold text-xl'>Amenities</h3>
-          {
-            amenities.map((item, index) =>{
-              
-              return  <ul key={index}>
-                 <li>{item}</li>
+                <h3 className='font-semibold text-xl'>Amenities</h3>
+                {
+                  amenities.map((item, index) => {
 
-              </ul>
-            })
-          }
-        </div>
+                    return <ul key={index}>
+                      <li>{item}</li>
+
+                    </ul>
+                  })
+                }
+              </div>
             </div>
             <p className="text-center text-xs text-slate-500 font-bold">30-Day Money-Back Guarantee • Secure Payment</p>
           </div>
