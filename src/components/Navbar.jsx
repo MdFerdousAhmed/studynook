@@ -1,52 +1,3 @@
-// import { Button } from "@heroui/react";
-// import Image from "next/image";
-// import Link from "next/link";
-// import { FaBookOpen } from "react-icons/fa";
-
-
-// const Navbar = () => {
-//   return (
-//     <nav>
-//       <div className="flex items-center justify-between p-4">
-//         <div className="flex items-center justify-center gap-2">
-//           <Image
-//             src="/book.jpg"
-//             width={30}
-//             height={30}
-//             alt="Picture of the author"
-//             className="rounded-lg"
-//           />
-//           <h1 className="text-2xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">StudyNook</h1>
-//         </div>
-//         <ul className="flex gap-3">
-//           <li><Link href={"/"}>Home</Link></li>
-          // <li><Link href={"/rooms"}>Rooms</Link></li>
-          // <li><Link href={"/add-room"}>Add Room</Link></li>
-          // <li><Link href={"/my-listings"}>My Listings</Link></li>
-          // <li><Link href={"/my-bookings"}>My Bookings</Link></li>
-//         </ul>
-//         <div >
-//           <ul className="flex gap-3">
-//             <li>
-//               <Link href={"/profile"}>Profile</Link>
-//             </li>
-//             <li>
-//               <Link href={"/login"}>Login</Link>
-//             </li>
-//             <li>
-//               <Link href={"/register"}>Register</Link>
-//             </li>
-//           </ul>
-
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default Navbar;
-
-
 
 
 "use client";
@@ -57,16 +8,27 @@ import { BookOpen, Menu, X, User, LogOut, LayoutDashboard } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@heroui/react";
 import Image from "next/image";
+import { signOut, useSession } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
+
 
 export function MainNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
+  const {data:session, isPending} = useSession();
+  // console.log(session)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handelLogOut = async()=>{
+    await signOut()
+    router.push("/")
+  }
 
   return (
     <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/70 backdrop-blur-md shadow-sm py-2" : "bg-slate-50 py-4"
@@ -94,7 +56,8 @@ export function MainNavbar() {
 
           <div className="hidden md:flex items-center gap-4">
 
-            <>
+            {
+              !isPending && !session ? <>
               <Link href="/login" className="font-medium text-slate-700 hover:text-blue-600 transition-colors">Login</Link>
               <Link href="/register">
 
@@ -102,26 +65,25 @@ export function MainNavbar() {
                   Register
                 </Button>
               </Link>
-            </>
-
+            </> :
             <div className="relative group">
               <button className="flex items-center gap-3 p-1 rounded-full hover:bg-muted transition-colors border border-transparent hover:border-border">
                 <Image
                   width={40}
                   height={40}
-                  src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=400"
+                  src={session?.user?.image || "https://i.ibb.co.com/Sj0b5Nz/Gemini-Generated-Image-a0bjmta0bjmta0bj.png"}
                   alt="avatar"
                   className="w-10 h-10 rounded-full object-cover ring-2 ring-blue-600/10"
                 />
                 <div className="text-left hidden lg:block">
-                  <p className="text-sm font-bold truncate max-w-25">Nazmus Sakib</p>
+                  <p className="text-sm font-bold truncate max-w-25">{session?.user?.name}</p>
                   <p className="text-[10px] text-slate-500">Student</p>
                 </div>
               </button>
               <div className="absolute right-0 top-12 w-56 bg-white border border-slate-200 rounded-2xl shadow-2xl hidden group-hover:flex flex-col py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                 <div className="px-4 py-3 border-b border-slate-100">
                   <p className="font-bold text-sm">Welcome back!</p>
-                  <p className="text-xs truncate text-slate-500">sakib@gmail.com</p>
+                  <p className="text-xs truncate text-slate-500">{session?.user?.email}</p>
                 </div>
                 <Link href="/dashboard" className="px-4 py-2 text-sm hover:bg-muted flex items-center gap-3 transition-colors">
                   <LayoutDashboard className="w-4 h-4" /> Dashboard
@@ -129,11 +91,16 @@ export function MainNavbar() {
                 <Link href="/settings" className="px-4 py-2 text-sm hover:bg-muted flex items-center gap-3 transition-colors">
                   <User className="w-4 h-4" /> Settings
                 </Link>
-                <button className="px-4 py-2 text-sm text-red-500 hover:bg-red-50 flex items-center gap-3 transition-colors text-left">
+                <button
+                 onClick={handelLogOut}
+                 className="px-4 py-2 text-sm text-red-500 hover:bg-red-50 flex items-center gap-3 transition-colors text-left">
                   <LogOut className="w-4 h-4" /> Log Out
                 </button>
               </div>
             </div>
+            }
+
+            
 
           </div>
 
@@ -166,7 +133,9 @@ export function MainNavbar() {
 
             <div className="flex flex-col gap-2">
               <p className="px-4 text-xs font-bold text-muted-foreground uppercase tracking-wider">Account</p>
-              <button className="block w-full text-left px-4 py-3 text-base font-medium text-red-500 hover:bg-red-50 rounded-xl">Log Out</button>
+              <button 
+              onClick={handelLogOut}
+              className="block w-full text-left px-4 py-3 text-base font-medium text-red-500 hover:bg-red-50 rounded-xl">Log Out</button>
             </div>
 
           </div>
