@@ -1,23 +1,43 @@
-## Website Name 
---StudyNook
+
+# StudyNook – Library Study Room Booking System
+
+StudyNook is a full-stack web application that allows users to **book study rooms**, manage schedules, and avoid time conflicts with smart booking validation.
+
+---
 
 ## Live Link
-** Live site URL: 
-** Server site URL:
+- Live site URL: 
+- Server site URL:
 
-## Website Feature
-** Fast and responsive performance for smooth browsing on any device
-** Clean, modern UI with an intuitive user experience
-** Secure authentication and protected user data handling
-** Powerful search and filtering system for quick results
-** Scalable architecture built with modern web technologies (Next.js / MERN-ready)
+## Features
 
-## Technology Used
-** Next.js
-** Express.js
-** MongoDB
+-  Authentication (Login / Register)
+-  Create & manage study rooms
+-  Search and filter rooms
+-  Book rooms with time slots
+-  Prevent double booking (conflict detection)
+-  View booking history
+-  Cancel bookings
+-  Fully responsive UI
 
-## Tools Used
-** VS Code
-** Better Auth
-** Hero UI
+---
+
+## Tech Stack
+
+**Frontend**
+- Next.js
+- React.js
+- Tailwind CSS
+
+**Backend**
+- Node.js
+- Express.js
+- MongoDB
+- JWT Authentication
+
+---
+
+## UI Styling Features (Dotted Design)
+
+You can use dotted styles in your UI like this:
+
