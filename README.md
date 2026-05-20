@@ -37,7 +37,8 @@ StudyNook is a full-stack web application that allows users to **book study room
 
 ---
 
-## UI Styling Features (Dotted Design)
-
-You can use dotted styles in your UI like this:
+## Tools Used
+* VS Code
+* Better Auth
+* Hero Ui
 
