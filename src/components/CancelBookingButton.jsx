@@ -1,16 +1,24 @@
 "use client";
 
-import {AlertDialog, Button} from "@heroui/react";
+import { AlertDialog, Button } from "@heroui/react";
+import { redirect } from "next/navigation";
+import toast from "react-hot-toast";
 
-export function CancelBookingButton({roomId}) {
-  const handelDelete = async() => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings/${roomId}`,{
+export function CancelBookingButton({ id, name }) {
+  const handelDelete = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json"
       }
     })
     const data = await res.json()
+    if (res.ok) {
+      toast.success("Room cancel successfully!");
+      redirect("/my-bookings");
+    } else {
+      toast.error("Failed to cancel room!");
+    }
     console.log(data)
   }
   return (
@@ -26,7 +34,7 @@ export function CancelBookingButton({roomId}) {
             </AlertDialog.Header>
             <AlertDialog.Body>
               <p>
-                This will permanently cancel <strong>My Awesome Room</strong> and all of its
+                This will permanently cancel <strong>{name}</strong> and all of its
                 data. This action cannot be undone.
               </p>
             </AlertDialog.Body>

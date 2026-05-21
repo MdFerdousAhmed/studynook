@@ -116,7 +116,7 @@ export default async function MyBookingsPage() {
                       <Chip color="success" size="sm">
                         Active
                       </Chip>
-                      <CancelBookingButton roomId={booking?.roomId}/>
+                      <CancelBookingButton name={booking?.roomName} id={booking?._id}/>
                     </div>
                   </div>
                 </div>

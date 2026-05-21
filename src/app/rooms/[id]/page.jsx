@@ -1,10 +1,12 @@
 import BookingButton from '@/components/BookingButton';
 import { DeleteAlert } from '@/components/DeleteAlert';
+import { EditModal } from '@/components/EditModal';
 import { auth } from '@/lib/auth';
-import { Chip } from '@heroui/react';
+import { Button, Chip } from '@heroui/react';
 import { headers } from 'next/headers';
 import Image from 'next/image';
 import React from 'react';
+import { BiEdit } from 'react-icons/bi';
 
 const fetchSingleRoom = async (id, token) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/rooms/${id}`,{
@@ -29,6 +31,7 @@ const fetchSingleRoom = async (id, token) => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
       <div className='flex justify-end items-center gap-3 m-3'>
+        <EditModal room={room}/>
         <DeleteAlert room={room}/>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
