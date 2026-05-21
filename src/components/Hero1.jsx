@@ -18,7 +18,7 @@ const Hero1 = () => {
         <Card className='grid justify-center items-center text-center'>
           <p>STEP 2</p>
           <h3 className='text-xl font-bold'>Pick a Time</h3>
-          <p>Choose a date and an open time slot --we'll prevent any conflict</p>
+          <p>Choose a date and an open time slot -- we'll prevent any conflict</p>
 
         </Card>
         <Card className='grid justify-center items-center text-center'>

@@ -1,3 +1,5 @@
+import BookingButton from '@/components/BookingButton';
+import { DeleteAlert } from '@/components/DeleteAlert';
 import { auth } from '@/lib/auth';
 import { Chip } from '@heroui/react';
 import { headers } from 'next/headers';
@@ -14,7 +16,7 @@ const fetchSingleRoom = async (id, token) => {
   return data || {};
 }
 
-const RoomDetails = async ({ params }) => {
+ const RoomDetails = async ({ params}) => {
   const { id } = await params;
   const {token} = await auth.api.getToken({
     headers: await headers() // headers containing the user's session token
@@ -26,6 +28,9 @@ const RoomDetails = async ({ params }) => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+      <div className='flex justify-end items-center gap-3 m-3'>
+        <DeleteAlert/>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
         <div className="lg:col-span-2 space-y-8">
           <div className="relative group overflow-hidden rounded-[2.5rem] shadow-2xl aspect-video">
@@ -79,17 +84,10 @@ const RoomDetails = async ({ params }) => {
               <div className="w-full h-px bg-slate-100"></div>
               <div className=" items-center gap-4 text-xs text-slate-500 font-bold">
                 <h3 className='font-semibold text-xl'>Amenities</h3>
-                {
-                  amenities.map((item, index) => {
-
-                    return <ul key={index}>
-                      <li>{item}</li>
-
-                    </ul>
-                  })
-                }
+                <p>{amenities}</p>
               </div>
             </div>
+            <BookingButton room={room}/>
             <p className="text-center text-xs text-slate-500 font-bold">30-Day Money-Back Guarantee • Secure Payment</p>
           </div>
         </div>

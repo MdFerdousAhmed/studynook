@@ -6,7 +6,7 @@ import { LuBookCheck } from 'react-icons/lu';
 
 const Hero = () => {
   return (
-    <card>
+    <Card>
       <h2 className='text-4xl font-bold text-center'>Why StudyNook?</h2>
       <p className='text-center'>Build around the way real students study --quiet,focused,and on your schedule</p>
       <div className='grid grid-cols-1 xl:grid-cols-3  gap-4 p-4'>
@@ -26,7 +26,7 @@ const Hero = () => {
           <p>Own a room? List it,set your hourly rate, and keep <br /> full control from your deshbord.</p>
         </Card>
       </div>
-    </card>
+    </Card>
   );
 };
 

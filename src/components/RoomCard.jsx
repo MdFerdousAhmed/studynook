@@ -42,15 +42,7 @@ const RoomCard = ({ room }) => {
 
         <div className=" items-center gap-4 text-xs text-slate-500 font-bold">
           <h3 className='font-semibold text-xl'>Amenities</h3>
-          {
-            amenities.map((item, index) =>{
-              
-              return  <ul key={index}>
-                 <li>{item}</li>
-
-              </ul>
-            })
-          }
+          <p>{amenities}</p>
         </div>
 
         <div className="pt-6 mt-auto border-t border-slate-100 flex justify-between items-center">

@@ -1,19 +1,40 @@
-import React from 'react';
+"use client"
 
-const RoomFrom = () => {
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+
+// import { ObjectId } from "mongodb";
+
+const AddRoomPage = () => {
+
+  const router = useRouter();
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    const fromData = new FormData(e.currentTarget);
+    const addRoom = Object.fromEntries(fromData.entries());
+
+    const res = await fetch('http://localhost:5000/rooms', {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(addRoom),
+
+    })
+    const data = await res.json()
+    if (res.ok) {
+      toast.success("Room added successfully!");
+      router.push("/");
+    } else {
+      toast.error("Failed to add room!");
+    }
+
+    console.log(data)
+  }
   return (
     <div>
-      <form className="space-y-4 max-w-xl mx-auto p-6 border rounded-xl shadow">
-        {/* Room Image */}
-        <div>
-          <label className="block mb-1 font-medium">Room Image URL</label>
-          <input
-            type="text"
-            name="image"
-            placeholder="Enter image URL"
-            className="w-full border rounded-lg px-4 py-2"
-          />
-        </div>
+      <h1 className="text-2xl font-bold text-center mt-4">Add room</h1>
+      <form onSubmit={onSubmit} className="space-y-4 max-w-xl mx-auto p-6 border rounded-xl shadow">
 
         {/* Room Name */}
         <div>
@@ -22,6 +43,17 @@ const RoomFrom = () => {
             type="text"
             name="name"
             placeholder="Enter room name"
+            className="w-full border rounded-lg px-4 py-2"
+          />
+        </div>
+
+        {/* Room Image */}
+        <div>
+          <label className="block mb-1 font-medium">Room Image URL</label>
+          <input
+            type="text"
+            name="image"
+            placeholder="Enter image URL"
             className="w-full border rounded-lg px-4 py-2"
           />
         </div>
@@ -95,4 +127,4 @@ const RoomFrom = () => {
   );
 };
 
-export default RoomFrom;
+export default AddRoomPage;
