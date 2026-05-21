@@ -4,7 +4,7 @@ import {AlertDialog, Button} from "@heroui/react";
 
 export function CancelBookingButton({roomId}) {
   const handelDelete = async() => {
-    const res = await fetch(`http://localhost:5000/bookings/${roomId}`,{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/bookings/${roomId}`,{
       method: "DELETE",
       headers: {
         "content-type": "application/json"

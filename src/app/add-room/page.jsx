@@ -13,7 +13,7 @@ const AddRoomPage = () => {
     const fromData = new FormData(e.currentTarget);
     const addRoom = Object.fromEntries(fromData.entries());
 
-    const res = await fetch('http://localhost:5000/rooms', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/rooms`, {
       method: "POST",
       headers: {
         "content-type": "application/json"

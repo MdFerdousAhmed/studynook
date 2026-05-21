@@ -29,7 +29,7 @@ const fetchSingleRoom = async (id, token) => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
       <div className='flex justify-end items-center gap-3 m-3'>
-        <DeleteAlert/>
+        <DeleteAlert room={room}/>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
         <div className="lg:col-span-2 space-y-8">

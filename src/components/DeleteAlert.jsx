@@ -3,10 +3,11 @@
 import {AlertDialog, Button} from "@heroui/react";
 import {TrashBin} from '@gravity-ui/icons';
 
-export function DeleteAlert() {
+export function DeleteAlert({room}) {
+  const {name,_id} = room;
   return (
     <AlertDialog>
-      <Button className={`text-red-500 rounded-md`} variant="outline"><TrashBin/>Delete</Button>
+      <Button className={`text-red-400 rounded-md`} variant="outline"><TrashBin/>Delete</Button>
       <AlertDialog.Backdrop>
         <AlertDialog.Container>
           <AlertDialog.Dialog className="sm:max-w-[400px]">
@@ -17,7 +18,7 @@ export function DeleteAlert() {
             </AlertDialog.Header>
             <AlertDialog.Body>
               <p>
-                This will permanently delete <strong>My Awesome Room</strong> and all of its
+                This will permanently delete <strong>{name}</strong> and all of its
                 data. This action cannot be undone.
               </p>
             </AlertDialog.Body>
