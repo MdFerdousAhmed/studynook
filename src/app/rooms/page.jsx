@@ -1,14 +1,15 @@
+export const dynamic = 'force-dynamic';
+
 import RoomCard from '@/components/RoomCard';
 import { fetchRooms } from '@/lib/rooms/data';
 import { Button } from '@heroui/react';
 import { BookOpen, Filter } from 'lucide-react';
 import React from 'react';
 
-
-
-const RoomsPage = async() => {
+const RoomsPage = async () => {
   const rooms = await fetchRooms();
-  console.log(rooms);
+  console.log("Fetched rooms:", rooms);
+  
   return (
     <div className="min-h-screen ">
       <main className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
@@ -25,16 +26,11 @@ const RoomsPage = async() => {
           </Button>
         </div>
 
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {
-            rooms?.map((room) => <RoomCard key={room._id} room={room} />
-              
-            )
-          } 
+          {rooms?.map((room) => (
+            <RoomCard key={room._id} room={room} />
+          ))}
         </div>
-
-
       </main>
     </div>
   );
