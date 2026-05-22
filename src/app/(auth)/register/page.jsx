@@ -131,7 +131,7 @@ export default function RegisterPage() {
                   <Input placeholder="Enter your password"
                     className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
                   />
-                  <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
+                  <Description className='text-black/80'>Must be at least 8 characters with 1 uppercase and 1 number</Description>
                   <FieldError />
                 </TextField>
               </div>

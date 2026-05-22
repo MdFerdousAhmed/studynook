@@ -43,10 +43,10 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-[80vh] flex flex-col bg-slate-50">
+    <div className="min-h-[80vh] flex flex-col">
       <div className="flex items-center justify-center p-4">
         <div className="w-full max-w-md">
-          <div className="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-2xl space-y-8 relative overflow-hidden">
+          <div className=" p-10 rounded-[2.5rem] border border-slate-200 shadow-2xl space-y-8 relative overflow-hidden">
             {/* Decorative element */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
 
@@ -79,7 +79,7 @@ export default function LoginPage() {
                 <span className="w-full border-t border-slate-100"></span>
               </div>
               <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-white px-4 text-slate-400 font-bold tracking-widest">Or with email</span>
+                <span className=" px-4 text-slate-400 font-bold tracking-widest">Or with email</span>
               </div>
             </div>
 
@@ -101,7 +101,7 @@ export default function LoginPage() {
                 >
                   <Label>Email</Label>
                   <Input placeholder="john@example.com"
-                    className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
+                    className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14  w-full rounded-2xl"
                   />
                   <FieldError />
                 </TextField>
@@ -130,10 +130,10 @@ export default function LoginPage() {
                   }}
                 >
                   <Label>Password</Label>
-                  <Input placeholder="Enter your password"
-                    className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14 bg-white w-full rounded-2xl"
+                  <Input  placeholder="Enter your password"
+                    className="border-2 border-slate-200 hover:border-blue-600/50 focus-within:border-blue-600 transition-all duration-300 h-14  w-full rounded-2xl"
                   />
-                  <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
+                  <Description className='text-black/80'>Must be at least 8 characters with 1 uppercase and 1 number</Description>
                   <FieldError />
                 </TextField>
 
