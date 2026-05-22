@@ -34,13 +34,13 @@ export function DeleteAlert({ room }) {
       <AlertDialog.Backdrop>
         <AlertDialog.Container>
           <AlertDialog.Dialog className="sm:max-w-[400px]">
-            <AlertDialog.CloseTrigger />
+            <AlertDialog.CloseTrigger className={`text-cyan-400`} />
             <AlertDialog.Header>
               <AlertDialog.Icon status="danger" />
               <AlertDialog.Heading>Delete room permanently?</AlertDialog.Heading>
             </AlertDialog.Header>
             <AlertDialog.Body>
-              <p>
+              <p className={`text-cyan-400`}>
                 This will permanently delete <strong>{name}</strong> and all of its
                 data. This action cannot be undone.
               </p>
