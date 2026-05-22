@@ -4,11 +4,12 @@ import { Button, Description, FieldError, Input, Label, TextField } from '@herou
 
 import Link from 'next/link';
 
-import { Mail, Lock, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 import Image from 'next/image';
-import { signIn } from '@/lib/auth-client';
+
 import toast from 'react-hot-toast';
+import { authClient, signIn } from '@/lib/auth-client';
 
 export default function LoginPage() {
   
@@ -35,6 +36,11 @@ export default function LoginPage() {
     // router.push("/")
 
   }
+  const handelGoogleSignin = async() => {
+  await authClient.signIn.social({
+    provider: "google",
+  });
+  }
 
   return (
     <div className="min-h-[80vh] flex flex-col bg-slate-50">
@@ -53,6 +59,7 @@ export default function LoginPage() {
 
             <div className="space-y-4">
               <Button
+                onClick={handelGoogleSignin}
                 variant="bordered"
                 className="w-full h-12 font-bold rounded-2xl border-slate-200 hover:bg-slate-50 transition-colors gap-3"
               >
