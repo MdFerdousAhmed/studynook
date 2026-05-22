@@ -46,15 +46,8 @@ const RoomCard = ({ room }) => {
         </div>
 
         <div className="pt-6 mt-auto border-t border-slate-100 flex justify-between items-center">
-          <span className="text-2xl font-black text-blue-600">${rate}</span>
+          <span className="text-2xl font-black text-blue-600">Price: ${rate}</span>
 
-          <Button
-            variant="flat"
-            color="primary"
-            className="font-bold rounded-xl px-6"
-          >
-            Book Now
-          </Button>
 
         </div>
       </div>
