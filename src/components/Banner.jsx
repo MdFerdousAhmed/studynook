@@ -134,7 +134,7 @@ export default function Banner() {
             <div className="flex justify-center">
 
               <Image
-                src="/library.jpg"
+                src="/library1.avif"
                 width={800}
                 height={800}
                 alt="Picture of the author"
@@ -195,7 +195,7 @@ export default function Banner() {
             <div className="flex justify-center">
 
               <Image
-                src="/library.jpg"
+                src="/library2.avif"
                 width={800}
                 height={800}
                 alt="Picture of the author"
