@@ -6,8 +6,8 @@ StudyNook is a full-stack web application that allows users to **book study room
 ---
 
 ## Live Link
-- Live site URL: 
-- Server site URL:
+- Live site URL: https://studynook-henna.vercel.app
+- Server site URL: https://studynook-server-gamma.vercel.app
 
 ## Features
 

@@ -91,7 +91,6 @@ export default async function MyListingPage() {
                     {booking?.description}
                   </p>
                 </div>
-
               </div>
             </div>
           ))}
