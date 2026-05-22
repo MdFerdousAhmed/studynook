@@ -9,7 +9,7 @@ const FeaturedCard = ({ room }) => {
 
   return (
     <div
-      className="group flex flex-col bg-white rounded-3xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+      className="group flex flex-col  rounded-3xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
     >
       <div className="relative aspect-16/10 overflow-hidden">
         <Image src={image || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600'}
@@ -33,7 +33,7 @@ const FeaturedCard = ({ room }) => {
       </div>
       <div className="p-5 flex flex-col grow space-y-3">
         <Link href={`/rooms/${_id}`}>
-          <h4 className="font-bold text-slate-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
+          <h4 className="font-bold line-clamp-2 group-hover:text-blue-600 transition-colors">
             {name}
           </h4>
         </Link>

@@ -49,7 +49,7 @@ export default async function MyBookingsPage() {
       <div className="flex flex-col md:flex-row gap-8 items-start">
         {/* Profile Section */}
         <div className="w-full md:w-1/4">
-          <div className="p-6 bg-white border rounded-2xl shadow-sm">
+          <div className="p-6  border rounded-2xl shadow-sm">
             <Image
               src={session?.user?.image || "/default-avatar.png"}
               alt="profile"
@@ -75,7 +75,7 @@ export default async function MyBookingsPage() {
           </h1>
 
           {bookings?.length === 0 ? (
-            <div className="p-12 text-center bg-slate-50 border rounded-2xl">
+            <div className="p-12 text-center  border rounded-2xl">
               <p className="mb-4 text-slate-600">
                 No bookings yet
               </p>
@@ -91,7 +91,7 @@ export default async function MyBookingsPage() {
               {bookings?.map((booking) => (
                 <div
                   key={booking?._id}
-                  className="flex flex-col md:flex-row gap-4 p-4 bg-white border rounded-xl shadow-sm"
+                  className="flex flex-col md:flex-row gap-4 p-4 border rounded-xl shadow-sm"
                 >
                   <Image
                     src={booking?.roomImage || "/room-placeholder.jpg"}

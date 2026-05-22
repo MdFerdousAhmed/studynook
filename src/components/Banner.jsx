@@ -24,7 +24,7 @@ export default function Banner() {
     <section>
       <Swiper navigation={true} pagination={true} modules={[Pagination, Navigation ]} className="mySwiper">
         <SwiperSlide>
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-80 bg-gray-50 overflow-hidden rounded-sm font-sans gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-80  overflow-hidden rounded-sm font-sans gap-8">
 
             {/* Left Content */}
             <div className="flex flex-col justify-center items-center xl:items-start space-y-2">
@@ -36,7 +36,7 @@ export default function Banner() {
 
               {/* Headline */}
               <div className="leading-tight space-y-2">
-                <h1 className="m-0 text-4xl font-extrabold text-gray-900 tracking-tight ">
+                <h1 className="m-0 text-4xl font-extrabold  tracking-tight ">
                   Find Your Perfect <br /> <span className="text-emerald-700 tracking-tight">Study Room</span>
                 </h1>
                 {/* Underline accent */}
@@ -51,19 +51,19 @@ export default function Banner() {
               {/* CTA Button */}
               <div className="flex gap-2 mt-2">
                 <Button className='rounded-lg  flex justify-center items-center'>Explore Rooms <FaArrowRightLong /></Button>
-                <Button className='rounded-lg' variant="outline">Get Started</Button>
+                <Button className='rounded-lg' >Get Started</Button>
               </div>
               <div className="flex gap-6 justify-center items-center text-center">
                 <div>
-                  <h1 className="text-xl font-semibold">120+</h1>
+                  <h1 className="text-xl font-semibold text-black/60">120+</h1>
                   <p className="text-black/60">Rooms Listed</p>
                 </div>
                 <div>
-                  <h1 className="text-xl font-semibold">8k</h1>
+                  <h1 className="text-xl font-semibold text-black/60">8k</h1>
                   <p className="text-black/60">Hours Booked</p>
                 </div>
                 <div>
-                  <h1 className="flex text-xl font-semibold justify-center items-center">4.9<span><IoIosStar /></span></h1>
+                  <h1 className="flex text-xl font-semibold justify-center items-center text-black/60">4.9<span><IoIosStar /></span></h1>
                   <p className="text-black/60">Avg. Rating</p>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function Banner() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-80 bg-gray-50 overflow-hidden rounded-sm font-sans gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-80  overflow-hidden rounded-sm font-sans gap-8">
 
             {/* Left Content */}
             <div className="flex flex-col justify-center items-center xl:items-start space-y-2">
@@ -97,7 +97,7 @@ export default function Banner() {
 
               {/* Headline */}
               <div className="leading-tight space-y-2">
-                <h1 className="m-0 text-4xl font-extrabold text-gray-900 tracking-tight ">
+                <h1 className="m-0 text-4xl font-extrabold  tracking-tight ">
                   Find Your Perfect <br /> <span className="text-emerald-700 tracking-tight">Study Room</span>
                 </h1>
                 {/* Underline accent */}
@@ -112,19 +112,19 @@ export default function Banner() {
               {/* CTA Button */}
               <div className="flex gap-2 mt-2">
                 <Button className='rounded-lg  flex justify-center items-center'>Explore Rooms <FaArrowRightLong /></Button>
-                <Button className='rounded-lg' variant="outline">Get Started</Button>
+                <Button className='rounded-lg' >Get Started</Button>
               </div>
               <div className="flex gap-6 justify-center items-center text-center">
                 <div>
-                  <h1 className="text-xl font-semibold">120+</h1>
+                  <h1 className="text-xl font-semibold text-black/60">120+</h1>
                   <p className="text-black/60">Rooms Listed</p>
                 </div>
                 <div>
-                  <h1 className="text-xl font-semibold">8k</h1>
+                  <h1 className="text-xl font-semibold text-black/60">8k</h1>
                   <p className="text-black/60">Hours Booked</p>
                 </div>
                 <div>
-                  <h1 className="flex text-xl font-semibold justify-center items-center">4.9<span><IoIosStar /></span></h1>
+                  <h1 className="flex text-xl font-semibold justify-center items-center text-black/60">4.9<span><IoIosStar /></span></h1>
                   <p className="text-black/60">Avg. Rating</p>
                 </div>
               </div>
@@ -146,7 +146,7 @@ export default function Banner() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-80 bg-gray-50 overflow-hidden rounded-sm font-sans gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-80  overflow-hidden rounded-sm font-sans gap-8">
 
             {/* Left Content */}
             <div className="flex flex-col justify-center items-center xl:items-start space-y-2">
@@ -158,7 +158,7 @@ export default function Banner() {
 
               {/* Headline */}
               <div className="leading-tight space-y-2">
-                <h1 className="m-0 text-4xl font-extrabold text-gray-900 tracking-tight ">
+                <h1 className="m-0 text-4xl font-extrabold  tracking-tight ">
                   Find Your Perfect <br /> <span className="text-emerald-700 tracking-tight">Study Room</span>
                 </h1>
                 {/* Underline accent */}
@@ -173,19 +173,19 @@ export default function Banner() {
               {/* CTA Button */}
               <div className="flex gap-2 mt-2">
                 <Button className='rounded-lg  flex justify-center items-center'>Explore Rooms <FaArrowRightLong /></Button>
-                <Button className='rounded-lg' variant="outline">Get Started</Button>
+                <Button className='rounded-lg' >Get Started</Button>
               </div>
               <div className="flex gap-6 justify-center items-center text-center">
                 <div>
-                  <h1 className="text-xl font-semibold">120+</h1>
+                  <h1 className="text-xl font-semibold text-black/60">120+</h1>
                   <p className="text-black/60">Rooms Listed</p>
                 </div>
                 <div>
-                  <h1 className="text-xl font-semibold">8k</h1>
+                  <h1 className="text-xl font-semibold text-black/60">8k</h1>
                   <p className="text-black/60">Hours Booked</p>
                 </div>
                 <div>
-                  <h1 className="flex text-xl font-semibold justify-center items-center">4.9<span><IoIosStar /></span></h1>
+                  <h1 className="flex text-xl font-semibold justify-center items-center text-black/60">4.9<span><IoIosStar /></span></h1>
                   <p className="text-black/60">Avg. Rating</p>
                 </div>
               </div>
@@ -206,6 +206,7 @@ export default function Banner() {
             </div>
           </div>
         </SwiperSlide>
+        
 
       </Swiper>
 

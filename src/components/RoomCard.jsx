@@ -8,7 +8,7 @@ const RoomCard = ({ room }) => {
   const { _id, name, image, description, rate, capacity, amenities } = room;
   return (
     <div
-      className="group flex flex-col bg-white rounded-4xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+      className="group flex flex-col  rounded-4xl border border-slate-200 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
     >
       <div className="relative overflow-hidden aspect-16/10">
         <Image

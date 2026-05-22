@@ -10,12 +10,12 @@ const FeaturedRooms = async () => {
   // console.log(courses);
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
           <div className="space-y-4">
             <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">Top Rated</h2>
-            <h3 className="text-4xl font-extrabold text-slate-900">Featured Rooms</h3>
+            <h3 className="text-4xl font-extrabold ">Featured Rooms</h3>
             <p className="text-slate-500 max-w-xl">
               It is premium rooms .It is a very beautiful and safe room.
             </p>

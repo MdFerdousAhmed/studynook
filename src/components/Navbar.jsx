@@ -10,6 +10,7 @@ import { Button } from "@heroui/react";
 import Image from "next/image";
 import { signOut, useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import NavLink from "./NavLink";
 
 
 export function MainNavbar() {
@@ -31,7 +32,7 @@ export function MainNavbar() {
   }
 
   return (
-    <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${scrolled ? "bg-white/70 backdrop-blur-md shadow-sm py-2" : "bg-slate-50 py-4"
+    <nav className={`sticky top-0 w-full z-50 transition-all duration-300 ${scrolled ? " backdrop-blur-md shadow-sm py-2" : "py-4"
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
@@ -40,18 +41,18 @@ export function MainNavbar() {
               <div className="p-2 bg-blue-600 rounded-xl group-hover:rotate-12 transition-transform">
                 <BookOpen className="w-6 h-6 text-white" />
               </div>
-              <span className="font-extrabold text-2xl tracking-tight text-slate-900">
+              <span className="font-extrabold text-2xl tracking-tight">
                 studynook
               </span>
             </Link>
           </div>
 
           <div className="hidden md:flex gap-8 items-center">
-            <Link href="/" className="font-medium text-slate-700 hover:text-blue-600 transition-colors">Home</Link>
-            <Link href="/rooms" className="font-medium text-slate-700 hover:text-blue-600 transition-colors">Rooms</Link>
-            <Link href="/add-room" className="font-medium text-slate-700 hover:text-blue-600 transition-colors">Add Room</Link>
-            <Link href="/my-listings" className="font-medium text-slate-700 hover:text-blue-600 transition-colors">My Listings</Link>
-            <Link href="/my-bookings" className="font-medium text-slate-700 hover:text-blue-600 transition-colors">My Bookings</Link>
+            <NavLink href="/" className="font-medium hover:text-blue-600 transition-colors">Home</NavLink>
+            <NavLink href="/rooms" className="font-medium  hover:text-blue-600 transition-colors">Rooms</NavLink>
+            <NavLink href="/add-room" className="font-medium  hover:text-blue-600 transition-colors">Add Room</NavLink>
+            <NavLink href="/my-listings" className="font-medium hover:text-blue-600 transition-colors">My Listings</NavLink>
+            <NavLink href="/my-bookings" className="font-medium hover:text-blue-600 transition-colors">My Bookings</NavLink>
           </div>
 
           <div className="hidden md:flex items-center gap-4">
@@ -82,14 +83,14 @@ export function MainNavbar() {
               </button>
               <div className="absolute right-0 top-12 w-56 bg-white border border-slate-200 rounded-2xl shadow-2xl hidden group-hover:flex flex-col py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                 <div className="px-4 py-3 border-b border-slate-100">
-                  <p className="font-bold text-sm">Welcome back!</p>
+                  <p className="font-bold text-sm text-black/80">Welcome back!</p>
                   <p className="text-xs truncate text-slate-500">{session?.user?.email}</p>
                 </div>
-                <Link href="/my-bookings" className="px-4 py-2 text-sm hover:bg-muted flex items-center gap-3 transition-colors">
-                  <LayoutDashboard className="w-4 h-4" /> My Bookings
+                <Link href="/my-bookings" className="px-4 py-2 text-sm hover:bg-muted flex items-center gap-3 transition-colors text-black/80">
+                  <LayoutDashboard className="w-4 h-4 text-black/80" /> My Bookings
                 </Link>
-                <Link href="/settings" className="px-4 py-2 text-sm hover:bg-muted flex items-center gap-3 transition-colors">
-                  <User className="w-4 h-4" /> Settings
+                <Link href="/settings" className="px-4 py-2 text-sm hover:bg-muted flex items-center gap-3 transition-colors text-black/80">
+                  <User className="w-4 h-4 text-black/80" /> Settings
                 </Link>
                 <button
                  onClick={handelLogOut}
@@ -114,12 +115,12 @@ export function MainNavbar() {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden px-4 pt-2 pb-6 space-y-2 bg-white border-b border-slate-200 animate-in slide-in-from-top duration-300">
-          <Link href="/" className="block px-4 py-3 text-base font-medium text-slate-900 hover:bg-slate-50 rounded-xl">Home</Link>
-          <Link href="/rooms" className="block px-4 py-3 text-base font-medium text-slate-900 hover:bg-slate-50 rounded-xl">Rooms</Link>
-            <Link href="/add-room" className="block px-4 py-3 text-base font-medium text-slate-900 hover:bg-slate-50 rounded-xl">Add Room</Link>
-            <Link href="/my-listings" className="block px-4 py-3 text-base font-medium text-slate-900 hover:bg-slate-50 rounded-xl">My Listings</Link>
-            <Link href="/my-bookings" className="block px-4 py-3 text-base font-medium text-slate-900 hover:bg-slate-50 rounded-xl">My Bookings</Link>
+        <div className="md:hidden px-4 pt-2 pb-6 space-y-2  border-b border-slate-200 animate-in slide-in-from-top duration-300">
+          <Link href="/" className="block px-4 py-3 text-base font-medium  hover:bg-slate-50 rounded-xl">Home</Link>
+          <Link href="/rooms" className="block px-4 py-3 text-base font-medium  hover:bg-slate-50 rounded-xl">Rooms</Link>
+            <Link href="/add-room" className="block px-4 py-3 text-base font-medium  hover:bg-slate-50 rounded-xl">Add Room</Link>
+            <Link href="/my-listings" className="block px-4 py-3 text-base font-medium  hover:bg-slate-50 rounded-xl">My Listings</Link>
+            <Link href="/my-bookings" className="block px-4 py-3 text-base font-medium  hover:bg-slate-50 rounded-xl">My Bookings</Link>
           <div className="pt-4 border-t border-border mt-4">
 
             <div className="grid grid-cols-2 gap-4">

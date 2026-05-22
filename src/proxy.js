@@ -9,7 +9,7 @@ export async function proxy(request) {
   }); 
   if(!session && !session?.user){
     console.log(request.url, "from proxy")
-    return NextResponse.redirect(new URL('/', request.url))
+    return NextResponse.redirect(new URL('/login', request.url))
   }
 }
  
@@ -17,6 +17,6 @@ export async function proxy(request) {
 // export default function proxy(request) { ... }
  
 export const config = {
-  matcher:[ '/rooms/:id', "/dashboard", "/add-room"],
+  matcher:[ '/rooms/:id', "/my-bookings", "/add-room"],
   
 }
